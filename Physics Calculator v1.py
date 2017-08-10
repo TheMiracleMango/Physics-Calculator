@@ -49,8 +49,11 @@ def main():
 #================[Update Here]================#
 
           #Add list of formulas into the list#
-    formula.append(x + v*t + Rational(1,2)*a*(t**Integer(2)) - X)   # [0]
-    formula.append(v + a*t - V)                                     # [1]
+    formula.append(x + v*t + Rational(1,2)*a*(t**Integer(2)) - X)               # [0]
+    formula.append((X - x)/t - V)                                               # [1]
+    formula.append(v + a*t - V)                                                 # [2]
+    formula.append(v**Integer(2) + Integer(2)*a*(X - x) - V**Integer(2))        # [3]
+    formula.append((V - v)/t - a)                                               # [4]
 
           #Print list of formulas into console#
     print('''
@@ -63,7 +66,10 @@ V - final velocity | v - initial velocity
 a - acceleration   | t - time
 
     [0]    X = x + vt + (1/2)a(t^2)
-    [1]    V = v + at
+    [1]    V = (X - x)/t
+    [2]    V = v + at
+    [3]    V^2 = v^2 + 2a(X - x)
+    [4]    a = (V - v)/t
 
     [x]    Exit
   _____________________________________
